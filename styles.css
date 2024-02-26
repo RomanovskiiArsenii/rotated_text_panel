@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(24, 24, 24);
+    font-family: 'Abel', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+:root {
+    --coeff: calc(1vw + 1vh);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: var(--coeff);
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: start;
+
+    position: absolute;
+    padding: 0.5em 1em;
+    left: 50%;
+    transform: translate(-50%, 30%);
+
+    transform: perspective(1200px) rotateY(-25deg) skewY(10deg) translate(-50%, 30%);
+
+    font-size: calc(4 * var(--coeff));
+    color: white;
+    border: calc(0.5 * var(--coeff)) solid white;
+    border-radius: calc(5 * var(--coeff));
+    box-shadow: 0px 0px 100px #5f4d83;
+
+    transition: box-shadow 1s ease-in-out, text-shadow 1s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0px 0px 120px #b58fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.753);
+}
+
+.container div {
+    display: grid;
+    text-align: justify;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    font-size: 1.4em;
+    transform-origin: center;
+    transform: scaleY(3.2) translateY(0.05em);
+}
+
+.item3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    font-size: 0.8em;
+    font-variant: small-caps;
+    line-height: 1em;
+    letter-spacing: 0.2em;
+    color: #b18aff;
+}
+
+.item3 p:nth-child(2) {
+    letter-spacing: 0.3em;
+}
+
+.item4 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    font-size: 1em;
+    text-wrap: nowrap;
+}
